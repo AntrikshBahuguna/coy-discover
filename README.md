@@ -27,9 +27,7 @@ Coy Discover allows users to explore profiles, like or pass on people, and disco
 | Framer Motion |      Animations and swipe gestures |
 | Git & GitHub  |      Version control               |
 
-## 📁 Project Structure
-
-```text
+##  Tree Structure
 coy-discover/
 ├── prisma/
 │   ├── migrations/
@@ -39,9 +37,13 @@ coy-discover/
 ├── src/
 │   ├── app/
 │   │   ├── discover/
+│   │   │   └── page.js
 │   │   ├── feed/
+│   │   │   └── route.js
 │   │   ├── matches/
+│   │   │   └── route.js
 │   │   ├── swipe/
+│   │   │   └── route.js
 │   │   ├── globals.css
 │   │   └── layout.js
 │   ├── components/
@@ -54,9 +56,9 @@ coy-discover/
 │       ├── prisma.js
 │       └── profile.js
 ├── .gitignore
+├── next.config.mjs
 ├── package.json
 └── README.md
-```
 
 ## ⚙️ Getting Started
 
