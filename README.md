@@ -1,36 +1,132 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Coy Discover 
 
-## Getting Started
+A profile discovery and matching application built with Next.js, React, Prisma, and SQLite.
 
-First, run the development server:
+Coy Discover allows users to explore profiles, like or pass on people, and discover mutual matches when two users express interest in each other.
+
+##  Features
+
+- **Profile Discovery:** Browse user profiles with images, locations, bios, and interests.
+- **Like and Pass:** Express interest or skip a profile.
+- **Mutual Matching:** A match is created when both users like each other.
+- **Matches Page:** View profiles that have mutually matched.
+- **Persistent Data:** Store profiles, swipes, and matches using Prisma and SQLite.
+- **Responsive Interface:** A clean interface inspired by Coy's visual identity.
+
+##  Tech Stack
+
+| Technology    |            Purpose                 |
+|               |                                    |
+| Next.js       |      Application framework         |
+| React         |      Frontend UI                   |
+| Tailwind CSS  |      Styling                       | 
+| Prisma ORM    |      Database access               |
+| SQLite        |      Database                      | 
+| JavaScript    |      Application logic             |
+| Lucide React  |      Icons                         |
+| Framer Motion |      Animations and swipe gestures |
+| Git & GitHub  |      Version control               |
+
+## 📁 Project Structure
+
+```text
+coy-discover/
+├── prisma/
+│   ├── migrations/
+│   ├── schema.prisma
+│   └── seed.js
+├── public/
+├── src/
+│   ├── app/
+│   │   ├── discover/
+│   │   ├── feed/
+│   │   ├── matches/
+│   │   ├── swipe/
+│   │   ├── globals.css
+│   │   └── layout.js
+│   ├── components/
+│   │   ├── DiscoverApp.jsx
+│   │   ├── MatchModal.jsx
+│   │   ├── Navbar.jsx
+│   │   └── ProfileCard.jsx
+│   └── lib/
+│       ├── constants.js
+│       ├── prisma.js
+│       └── profile.js
+├── .gitignore
+├── package.json
+└── README.md
+```
+
+## ⚙️ Getting Started
+
+### Prerequisites
+
+- Node.js
+- npm
+- Git
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/AntrikshBahuguna/coy-discover.git
+cd coy-discover
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure environment variables
+
+Create a `.env` file in the project root and configure the database connection:
+
+```env
+DATABASE_URL="file:../dev.db"
+```
+
+### 4. Set up the database
+
+Apply the existing Prisma migrations:
+
+```bash
+npx prisma migrate deploy
+```
+
+### 5. Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🔌 API Endpoints
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/feed` | Fetch available profiles |
+| POST | `/swipe` | Like or pass on a profile |
+| GET | `/matches` | Retrieve mutual matches |
 
-## Learn More
+## 💡 Matching Logic
 
-To learn more about Next.js, take a look at the following resources:
+The application uses a mutual-like matching system.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. A user views another person's profile.
+2. The user chooses Like or Pass.
+3. The swipe is saved in the database.
+4. If the other person has already liked the user, a match is created.
+5. The confirmed match appears on the Matches page.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 👨‍💻 Author
 
-## Deploy on Vercel
+**Antriksh Bahuguna**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+GitHub: [AntrikshBahuguna](https://github.com/AntrikshBahuguna)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+*Coy Discover is a demonstration project developed as part of an SDE internship assignment.*
