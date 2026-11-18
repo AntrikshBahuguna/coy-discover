@@ -1,12 +1,74 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client"
-  output   = "../generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
+}
+model User {
+  id           Int           @id @default(autoincrement())
+  name         String
+  email        String        @unique
+
+  swipes       Swipe[]
+  incomingLikes IncomingLike[]
+  matches      Match[]
+}
+
+model Profile {
+  id        Int      @id
+  name      String
+  age       Int
+  photo     String
+  bio       String
+  city      String
+  interests String
+
+  swipes        Swipe[]
+  incomingLikes IncomingLike[]
+  matches       Match[]
+}
+
+model Swipe {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  profileId Int
+  direction String
+  createdAt DateTime @default(now())
+
+  user User @relation( fields: [userId], references: [id], onDelete: Cascade )
+
+  profile Profile @relation( fields: [profileId], references: [id], onDelete: Cascade )
+
+  @@unique([userId, profileId])
+  @@index([userId])
+}
+
+model IncomingLike {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  profileId Int
+  createdAt DateTime @default(now())
+
+  user User @relation( fields: [userId], references: [id], onDelete: Cascade )
+   
+
+  profile Profile @relation( fields: [profileId], references: [id], onDelete: Cascade )
+
+  @@unique([userId, profileId])
+}
+
+model Match {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  profileId Int
+  createdAt DateTime @default(now())
+
+  user User @relation( fields: [userId], references: [id], onDelete: Cascade )
+
+  profile Profile @relation( fields: [profileId], references: [id], onDelete: Cascade )
+
+  @@unique([userId, profileId])
 }

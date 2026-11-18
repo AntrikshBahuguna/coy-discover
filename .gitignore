@@ -55,3 +55,22 @@ node_modules
 .env
 
 /generated/prisma
+node_modules/
+.next/
+.env
+.env.*
+!.env.example
+
+dev.db
+dev.db-journal
+prisma/dev.db
+
+# Local database files
+dev.db
+dev.db-journal
+dev-backup*.db
+*.db-wal
+
+# Local debugging scripts
+check-db.cjs
+reset-demo-swipes.cjs

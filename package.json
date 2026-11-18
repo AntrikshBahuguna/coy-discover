@@ -8,7 +8,13 @@
     "start": "next start",
     "lint": "eslint"
   },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
   "dependencies": {
+    "@prisma/adapter-better-sqlite3": "^7.10.1",
+    "@prisma/client": "^6.19.1",
+    "better-sqlite3": "^13.2.0",
     "framer-motion": "^14.14.0",
     "lucide-react": "^1.74.0",
     "next": "16.4.6",
@@ -17,8 +23,10 @@
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "4.3.3",
+    "dotenv": "^18.0.10",
     "eslint": "^9",
     "eslint-config-next": "16.4.6",
+    "prisma": "^6.19.1",
     "tailwindcss": "4.3.3"
   }
 }
