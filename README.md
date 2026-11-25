@@ -16,7 +16,7 @@ Coy Discover allows users to explore profiles, like or pass on people, and disco
 ##  Tech Stack
 
 | Technology    |            Purpose                 |
-|               |                                    |
+|---------------|------------------------------------|
 | Next.js       |      Application framework         |
 | React         |      Frontend UI                   |
 | Tailwind CSS  |      Styling                       | 
@@ -107,11 +107,11 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 🔌 API Endpoints
 
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/feed` | Fetch available profiles |
-| POST | `/swipe` | Like or pass on a profile |
-| GET | `/matches` | Retrieve mutual matches |
+| Method | Endpoint   |      Description          |
+|--------|------------|---------------------------|
+| GET    | `/feed`    | Fetch available profiles  |
+| POST   | `/swipe`   | Like or pass on a profile |
+| GET    | `/matches` | Retrieve mutual matches   |
 
 ## 💡 Matching Logic
 
