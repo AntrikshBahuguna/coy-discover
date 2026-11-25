@@ -29,36 +29,36 @@ Coy Discover allows users to explore profiles, like or pass on people, and disco
 
 ##  Tree Structure
 coy-discover/
-├── prisma/
-│   ├── migrations/
-│   ├── schema.prisma
-│   └── seed.js
-├── public/
-├── src/
-│   ├── app/
-│   │   ├── discover/
-│   │   │   └── page.js
-│   │   ├── feed/
-│   │   │   └── route.js
-│   │   ├── matches/
-│   │   │   └── route.js
-│   │   ├── swipe/
-│   │   │   └── route.js
-│   │   ├── globals.css
-│   │   └── layout.js
-│   ├── components/
-│   │   ├── DiscoverApp.jsx
-│   │   ├── MatchModal.jsx
-│   │   ├── Navbar.jsx
-│   │   └── ProfileCard.jsx
-│   └── lib/
-│       ├── constants.js
-│       ├── prisma.js
-│       └── profile.js
-├── .gitignore
-├── next.config.mjs
-├── package.json
-└── README.md
+    ├── prisma/
+    │   ├── migrations/
+    │   ├── schema.prisma
+    │   └── seed.js
+    ├── public/
+    ├── src/
+    │   ├── app/
+    │   │   ├── discover/
+    │   │   │   └── page.js
+    │   │   ├── feed/
+    │   │   │   └── route.js
+    │   │   ├── matches/
+    │   │   │   └── route.js
+    │   │   ├── swipe/
+    │   │   │   └── route.js
+    │   │   ├── globals.css
+    │   │   └── layout.js
+    │   ├── components/
+    │   │   ├── DiscoverApp.jsx
+    │   │   ├── MatchModal.jsx
+    │   │   ├── Navbar.jsx
+    │   │   └── ProfileCard.jsx
+    │   └── lib/
+    │       ├── constants.js
+    │       ├── prisma.js
+    │       └── profile.js
+    ├── .gitignore
+    ├── next.config.mjs
+    ├── package.json
+    └── README.md
 
 ## ⚙️ Getting Started
 
