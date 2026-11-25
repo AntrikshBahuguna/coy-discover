@@ -39,7 +39,7 @@ export default function MatchModal({ profile, onClose }) {
           />
 
           <h2 className="text-4xl font-extrabold text-purple-300">
-            It's a Match!
+            It is a Match!
           </h2>
 
           <p className="text-gray-400 mt-3">

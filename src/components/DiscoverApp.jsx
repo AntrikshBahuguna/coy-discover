@@ -87,7 +87,41 @@ export default function DiscoverApp() {
 
   // Load feed when application opens
   useEffect(() => {
-    fetchFeed();
+    let cancelled = false;
+
+    async function loadInitialFeed() {
+      try {
+        const response = await fetch("/feed", {
+          cache: "no-store"
+        });
+
+        if (!response.ok) {
+          throw new Error("Unable to load profiles");
+        }
+
+        const data = await response.json();
+
+        if (!cancelled) {
+          setProfiles(data.profiles || []);
+        }
+      } catch (loadError) {
+        console.error(loadError);
+
+        if (!cancelled) {
+          setError("Unable to load profiles. Please try again.");
+        }
+      } finally {
+        if (!cancelled) {
+          setLoading(false);
+        }
+      }
+    }
+
+    loadInitialFeed();
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   // Handle like and pass
@@ -289,7 +323,7 @@ export default function DiscoverApp() {
                 </div>
 
                 <h3 className="text-2xl font-bold">
-                  You're all caught up!
+                  You are all caught up!
                 </h3>
 
                 <p className="text-gray-400 mt-3">
